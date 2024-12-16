@@ -1,0 +1,432 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>College Predictor</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    
+    <style>
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        overflow-x: hidden;
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+      header .logo {
+        font-size: 24px;
+        font-weight: bold;
+       
+      }
+      
+      header .logo a{
+        color: #fff;
+        text-decoration: none;
+      }
+
+      header nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      header nav ul li {
+        margin-left: 20px;
+      }
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      
+
+      .hero {
+        padding-top: 6px;
+        height: 100vh;
+        background: url("./landing.png") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+      }
+      .hero h1 {
+        font-size: 48px;
+        margin: 0;
+        animation: fadeInDown 1s ease-out;
+      }
+      .hero p {
+        font-size: 24px;
+        margin: 20px 0 0;
+        animation: fadeInUp 1s ease-out;
+      }
+      .hero .cta {
+        margin-top: 30px;
+        animation: fadeInUp 1s ease-out;
+      }
+      .hero .cta a {
+        background: #ff5722;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+      .features {
+        padding: 60px 20px;
+        background: linear-gradient(
+          to bottom,
+          rgba(14, 14, 14, 0.995),
+          rgba(35, 35, 32, 0.326)
+        );
+        text-align: center;
+      }
+      .features h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #f4f4f4;
+      }
+      .features .feature {
+        display: inline-block;
+        width: 30%;
+        margin: 0 1.5%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .features .feature:hover {
+        transform: translateY(-10px);
+      }
+      .features .feature i {
+        font-size: 48px;
+        color: #ff5722;
+        margin-bottom: 20px;
+        margin: 10px;
+      }
+      .features .feature h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .features .feature p {
+        font-size: 16px;
+        color: #a19c9c;
+      }
+      .news {
+        padding: 60px 20px;
+        background: linear-gradient(
+          to top,
+          rgba(14, 14, 14, 0.995),
+          rgba(35, 35, 32, 0.326)
+        );
+
+        text-align: center;
+      }
+      .news h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+      .news .news-item {
+        display: inline-block;
+        width: 30%;
+        margin: 0 1.5%;
+        background: #f4f4f4;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      .news .news-item:hover {
+        transform: translateY(-10px);
+      }
+      .news .news-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .news .news-item h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .news .news-item p {
+        font-size: 16px;
+        color: #666;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      footer p {
+        margin: 0;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        a{
+          cursor: pointer;
+        }
+      }
+
+      html {
+  scroll-behavior: smooth;
+  
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        
+        <div class="logo" id="#logo1"><a href="#hero1"> College Predictor</a></div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#features"> Features </a>
+            </li>
+            <li>
+              <a href="#news"> Latest Updates </a>
+            </li>
+            <li>
+              <a href="./contact.html" class=".fade-link"> Contact </a>
+            </li>
+            <li>
+                <a href="./login.html"> add college </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero" id="hero1">
+      <div>
+        <h1>Welcome to College Predictor</h1>
+        <p>Predict your chances of getting into your dream college</p>
+        <div class="cta">
+          <a href="#features"> Learn More </a>
+        </div>
+      </div>
+    </section>
+    <section class="features" id="features">
+      <h2>Features</h2>
+      <div class="feature" id="f1" onclick="openFilterCollege()">
+        <i class="fas fa-calculator"></i>
+        <h3>Admission Probability Calculator</h3>
+        <p>
+          Calculate your chances of getting into various colleges based on your
+          scores.
+        </p>
+      </div>
+      <div class="feature" id="f2" onclick="opentopCollege()">
+        <i class="fas fa-school"> </i>
+        <h3>College ranking</h3>
+        <p>
+          Browse Top engineering College.
+        </p>
+      </div>
+      <div class="feature" id="f3">
+        <i class="fas fa-users"> </i>
+        <h3>Peer Predictions</h3>
+        <p>See how other students with similar scores are faring.</p>
+      </div>
+    </section>
+    <section class="news" id="news">
+      <h2>Latest Updates</h2>
+      <div class="news-item" id="n1">
+        <img
+          alt="Image of a student analyzing college predictions"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/OOYkzn01eIwBGCHA8p9casEanF8lTT1Og9imzYn0pQYe1fynA.jpg"
+          width="300"
+        />
+        <h3>New Predictive Features Added</h3>
+        <p>
+          Check out the new predictive features for the next academic session.
+        </p>
+      </div>
+      <div class="news-item" id="n2">
+        <img
+          alt="Image of students discussing in a group"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/HNpfEN8ev9rW9UUWUQfp7f8dKs4W4cfWZ6kPeEIrrdaEe6v8JA.jpg"
+          width="300"
+        />
+        <h3>College Trends</h3>
+        <p>
+          Discover new trends in college admissions and cutoffs for the upcoming
+          year.
+        </p>
+      </div>
+      <div class="news-item" id="n3">
+        <img
+          alt="Image of graduation success"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/TeaAZubA4WU6dq916LN3VVvyeOYAtgo9beWI29YtIJH1rflPB.jpg"
+          width="300"
+        />
+        <h3>Success Stories</h3>
+        <p>
+          Hear from students who used the College Predictor tool and made it to
+          their dream college.
+        </p>
+      </div>
+    </section>
+    <footer>
+      <p>© 2023 College Predictor. All rights reserved.</p>
+    </footer>
+  </body>
+
+  <script>
+     gsap.registerPlugin(ScrollTrigger);
+
+     gsap.from("#f1", {
+  x: -100,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#f1",      // The element triggering the animation
+    start: "top 60%",    // Animation starts when #f1 reaches 60% of the viewport height
+    end: "top 20%",      // Animation ends when #f1 reaches 20% of the viewport height
+    scrub: 2,            
+        
+  }
+});
+
+// Animation for #f2
+gsap.from("#f2", {
+  x: 100,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#f2",      
+    start: "top 60%",    
+    end: "top 20%",      
+    scrub: 2,           
+    
+  }
+});
+
+gsap.from("#f3",{
+  y:100,
+  duration:1,
+  opacity:0,
+  scrollTrigger:{
+    trigger:"#f3",
+    start: "top 80%",    
+    end: "top 20%",      
+    scrub: 2, 
+  }
+});
+
+gsap.from("#n1", {
+  x: -100,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#n1",      // The element triggering the animation
+    start: "top 60%",    // Animation starts when #f1 reaches 60% of the viewport height
+    end: "top 20%",      // Animation ends when #f1 reaches 20% of the viewport height
+    scrub: 2,            
+        
+  }
+});
+
+// Animation for #f2
+gsap.from("#n2", {
+  x: 100,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#n2",      
+    start: "top 60%",    
+    end: "top 20%",      
+    scrub: 2,           
+    
+  }
+});
+
+gsap.from("#n3",{
+  y:100,
+  duration:1,
+  opacity:0,
+  scrollTrigger:{
+    trigger:"#n3",
+    start: "top 80%",    
+    end: "top 20%",      
+    scrub: 2, 
+  }
+});
+
+
+
+    function openFilterCollege() {
+      
+      window.location.href = "./filter_college.html"; 
+    }
+
+    function opentopCollege() {
+    
+      window.location.href = "./clg_rank.html"; 
+    }
+
+  
+    document.querySelector('.fade-link').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default behavior
+
+    // GSAP fade-out animation
+    gsap.to('body', { opacity: 0, duration: 3, onComplete: function() {
+        // After fade-out, redirect to the contact page
+        window.location.href = './contact.html';
+    }});
+  });
+
+  </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add College Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; }
+        .cutoff-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Add College Data</h1>
+    <form action="add_college.php" method="POST">
+        <input type="text" name="college_name" placeholder="College Name" required>
+        <input type="text" name="branch" placeholder="Branch" required>
+        <div class="cutoff-group">
+            <label for="general_cutoff">General Cutoff Percentage:</label>
+            <input type="number" step="0.01" name="general_cutoff" id="general_cutoff" placeholder="General Cutoff" required>
+        </div>
+        <div class="cutoff-group">
+            <label for="obc_cutoff">OBC Cutoff Percentage:</label>
+            <input type="number" step="0.01" name="obc_cutoff" id="obc_cutoff" placeholder="OBC Cutoff" required>
+        </div>
+        <div class="cutoff-group">
+            <label for="sc_cutoff">SC Cutoff Percentage:</label>
+            <input type="number" step="0.01" name="sc_cutoff" id="sc_cutoff" placeholder="SC Cutoff" required>
+        </div>
+        <div class="cutoff-group">
+            <label for="st_cutoff">ST Cutoff Percentage:</label>
+            <input type="number" step="0.01" name="st_cutoff" id="st_cutoff" placeholder="ST Cutoff" required>
+        </div>
+        <input type="text" name="location" placeholder="Location" required>
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Private">Private</option>
+            <option value="Government">Government</option>
+            <option value="Government Autonomous">Government Autonomous</option>
+        </select>
+        <button type="submit">Add College</button>
+    </form>
+</body>
+</html>
+

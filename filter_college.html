@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Colleges</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Filter Colleges</h1>
+    <form action="filter_college.php" method="POST">
+        <input type="text" name="student_name" placeholder="Your Name" required>
+        <select name="branch" required>
+            <option value="">Select Branch</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Electronics">Electronics</option>
+        </select>
+        <select name="caste" required>
+            <option value="">Select Caste</option>
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+        </select>
+        <input type="number" step="0.01" name="percentage" placeholder="Your Percentage" required>
+        <button type="submit">Filter Colleges</button>
+    </form>
+</body>
+</html>
